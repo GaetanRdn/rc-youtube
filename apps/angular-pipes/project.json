@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/angular-pipes",
         "index": "apps/angular-pipes/src/index.html",
         "browser": "apps/angular-pipes/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/angular-pipes/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,7 +26,9 @@
             "input": "apps/angular-pipes/public"
           }
         ],
-        "styles": ["apps/angular-pipes/src/styles.scss"],
+        "styles": [
+          "apps/angular-pipes/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -61,18 +67,14 @@
       },
       "defaultConfiguration": "development"
     },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "buildTarget": "angular-pipes:build"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/angular-pipes/jest.config.ts"
       }
