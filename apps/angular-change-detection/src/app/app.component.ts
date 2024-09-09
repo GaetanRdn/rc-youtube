@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
-import { TitleComponent } from './title.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ParentComponent } from './parent.component';
 
 @Component({
   standalone: true,
   selector: 'rc-root',
-  template: ` <rc-title />`,
-  styles: ``,
-  imports: [TitleComponent],
+  template: `
+    <button (click)="increment()">Click me</button>
+
+    <p>{{ count }}</p>
+
+    <rc-parent />
+  `,
+  imports: [ParentComponent],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class AppComponent {}
+export class AppComponent {
+  count = 0;
+
+  increment(): void {
+    this.count += 1;
+  }
+}
