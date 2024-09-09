@@ -73,7 +73,8 @@
       "inlineStyle": "true",
       "inlineTemplate": "true",
       "prefix": "rc",
-      "flat": "true"
+      "flat": "true",
+      "changeDetection": "OnPush"
     }
   }
 }

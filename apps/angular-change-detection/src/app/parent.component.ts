@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ChildComponent } from './child.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { ChildComponent } from './child.component';
     {{ log() }}
     <rc-child />`,
   imports: [ChildComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParentComponent {
   log(): string {
