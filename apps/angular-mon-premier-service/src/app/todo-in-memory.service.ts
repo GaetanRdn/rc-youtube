@@ -7,7 +7,7 @@ type Todo = {
   completed: boolean;
 };
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TodoInMemoryService {
   private readonly todos$: BehaviorSubject<Todo[]> = new BehaviorSubject<
     Todo[]
