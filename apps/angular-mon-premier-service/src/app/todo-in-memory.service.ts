@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
-type Todo = {
+export type Todo = {
   id: number;
   title: string;
   completed: boolean;
@@ -17,7 +17,7 @@ export class TodoInMemoryService {
 
   post(todo: Omit<Todo, 'id'>): Observable<Todo> {
     const todos: Todo[] = this.todos$.value;
-    const newTodo: Todo = { ...todo, id: this.id++ };
+    const newTodo: Todo = { ...todo, id: ++this.id };
     this.todos$.next([...todos, newTodo]);
 
     return of(newTodo);
