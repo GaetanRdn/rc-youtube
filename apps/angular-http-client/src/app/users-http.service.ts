@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CreateUserPayload, User } from './user';
 
 @Injectable({ providedIn: 'root' })
-export class UsersService {
+export class UsersHttpService {
   private readonly httpClient: HttpClient = inject(HttpClient);
 
   getAll(): Observable<User[]> {
