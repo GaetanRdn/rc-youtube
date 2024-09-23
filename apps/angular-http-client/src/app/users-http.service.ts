@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { CreateUserPayload, User } from './user';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  getAll(): Observable<any> {
-    return of([
-      {
-        name: 'Redin',
-        firstName: 'Gaetan',
-      },
-      {
-        name: 'Bob',
-        firstName: 'Uncle',
-      },
-    ]);
+  private readonly httpClient: HttpClient = inject(HttpClient);
+
+  getAll(): Observable<User[]> {
+    return this.httpClient.get<User[]>('/users');
+  }
+
+  create(user: CreateUserPayload): Observable<User> {
+    return this.httpClient.post<User>('/users', user);
   }
 }
