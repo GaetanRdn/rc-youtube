@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UsersService } from './users-http.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   selector: 'rc-root',
-  template: `<h1>Welcome angular-http-client</h1> `,
+  template: `<h1>EasyAngular Vidéo ✌🏼</h1>
+    <ul>
+      @for(user of users$ | async; track user) {
+        <li>{{ user.firstName }} {{ user.name }}</li>
+      }
+    </ul> `,
   styles: ``,
 })
-export class AppComponent {}
+export class AppComponent {
+  protected users$: Observable<any> = inject(UsersService).getAll();
+}
