@@ -70,7 +70,6 @@ export class CreateUserFormComponent {
   });
 
   submit(): void {
-    console.log('submit');
-    console.log(this.form.getRawValue());
+    this.userCreated.emit(this.form.getRawValue());
   }
 }
