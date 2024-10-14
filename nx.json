@@ -66,10 +66,11 @@
       "unitTestRunner": "jest",
       "inlineStyle": "true",
       "inlineTemplate": "true",
-      "prefix": "rc"
+      "prefix": "rc",
+      "minimal": "true"
     },
     "@nx/angular:component": {
-      "style": "scss",
+      "style": "css",
       "inlineStyle": "true",
       "inlineTemplate": "true",
       "prefix": "rc",
