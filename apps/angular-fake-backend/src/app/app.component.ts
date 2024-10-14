@@ -16,17 +16,7 @@ import { UsersListComponent } from './users-list.component';
   imports: [CreateUserFormComponent, UsersListComponent],
 })
 export class AppComponent {
-  protected users: User[] = [
-    { id: 1, lastName: 'Redin', firstName: 'Gaetan', email: 'rg@y.com' },
-    {
-      id: 2,
-      lastName: 'Paulo',
-      firstName: 'Paulo',
-      email: 'mp@y.com',
-    },
-  ];
-
-  // protected users: User[] = [];
+  protected users: User[] = [];
 
   createUser(user: UserCreationPayload) {
     // TODO
