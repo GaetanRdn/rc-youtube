@@ -4,6 +4,7 @@ import { CoachingOneHourComponent } from './coaching-one-hour.component';
 import { ContactComponent } from './contact.component';
 
 export const appRoutes: Route[] = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path: 'one-hour',
