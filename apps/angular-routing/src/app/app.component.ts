@@ -3,7 +3,7 @@ import { HomeComponent } from './home.component';
 import { CoachingOneHourComponent } from './coaching-one-hour.component';
 import { CoachingOneMonthComponent } from './coaching-one-month.component';
 import { ContactComponent } from './contact.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -11,15 +11,15 @@ import { RouterOutlet } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="flex gap-4 items-center cursor-pointer border-2">
-      <a class="w-10 h-10 inline-flex">
+      <a class="w-10 h-10 inline-flex" routerLink="/home">
         <span class="bg-header-logo bg-cover bg-center w-10 h-10"></span>
         <span class="sr-only">lien pour rediriger vers la home page</span>
       </a>
 
       <nav class="flex items-center justify-items-center divide-x-2">
-        <a class="py-2 px-4">Coaching 1h</a>
-        <a class="py-2 px-4">Coaching 1 mois</a>
-        <a class="py-2 px-4">Contact</a>
+        <a class="py-2 px-4" routerLink="/one-hour">Coaching 1h</a>
+        <a class="py-2 px-4" routerLink="/one-month">Coaching 1 mois</a>
+        <a class="py-2 px-4" routerLink="/contact">Contact</a>
       </nav>
     </header>
 
@@ -27,6 +27,13 @@ import { RouterOutlet } from '@angular/router';
       <router-outlet />
     </main>
   `,
-  imports: [HomeComponent, CoachingOneHourComponent, CoachingOneMonthComponent, ContactComponent, RouterOutlet],
+  imports: [
+    HomeComponent,
+    CoachingOneHourComponent,
+    CoachingOneMonthComponent,
+    ContactComponent,
+    RouterOutlet,
+    RouterLink,
+  ],
 })
 export class AppComponent {}
