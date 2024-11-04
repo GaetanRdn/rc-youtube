@@ -37,5 +37,5 @@ import { ContactComponent } from './contact.component';
   imports: [HomeComponent, CoachingOneHourComponent, CoachingOneMonthComponent, ContactComponent],
 })
 export class AppComponent {
-  currentPage: WritableSignal<'home' | 'one-hour' | 'one-month' | 'contact'> = signal('home');
+  protected readonly currentPage: WritableSignal<'home' | 'one-hour' | 'one-month' | 'contact'> = signal('home');
 }
