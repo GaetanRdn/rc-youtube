@@ -1,8 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { HomeComponent } from './home.component';
-import { CoachingOneHourComponent } from './coaching-one-hour.component';
-import { CoachingOneMonthComponent } from './coaching-one-month.component';
-import { ContactComponent } from './contact.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -27,13 +23,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       <router-outlet />
     </main>
   `,
-  imports: [
-    HomeComponent,
-    CoachingOneHourComponent,
-    CoachingOneMonthComponent,
-    ContactComponent,
-    RouterOutlet,
-    RouterLink,
-  ],
+  imports: [RouterOutlet, RouterLink],
 })
 export class AppComponent {}
