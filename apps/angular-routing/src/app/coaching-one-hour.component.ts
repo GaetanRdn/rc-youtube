@@ -7,6 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   host: {
     class: 'flex flex-col gap-8 justify-center items-center h-screen',
   },
-  template: `<h1 class="text-3xl">Tu cherches un accompagnement d'1 heure ?</h1>`,
+  template: `<h1 class="text-2xl">Tu cherches un accompagnement d'1 heure ?</h1>`,
 })
 export class CoachingOneHourComponent {}

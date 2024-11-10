@@ -17,8 +17,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       </a>
 
       <nav class="flex items-center justify-items-center divide-x-2">
-        <a class="py-2 px-4" routerLink="/one-hour">Coaching 1h</a>
-        <a class="py-2 px-4" routerLink="/one-month">Coaching 1 mois</a>
+        <a class="py-2 px-4" routerLink="/coaching/one-hour">Coaching 1h</a>
+        <a class="py-2 px-4" routerLink="/coaching/one-month">Coaching 1 mois</a>
         <a class="py-2 px-4" routerLink="/contact">Contact</a>
       </nav>
     </header>
