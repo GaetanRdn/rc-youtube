@@ -5,6 +5,7 @@ import { ContactComponent } from './contact.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { CoachingOneMonthComponent } from './coaching-one-month.component';
 import { CoachingComponent } from './coaching.component';
+import { CoachingDetailComponent } from './coaching-detail.component';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,12 @@ export const appRoutes: Route[] = [
       {
         path: 'one-hour',
         component: CoachingOneHourComponent,
+        children: [
+          {
+            path: ':id',
+            component: CoachingDetailComponent,
+          },
+        ],
       },
       { path: 'one-month', component: CoachingOneMonthComponent },
     ],
