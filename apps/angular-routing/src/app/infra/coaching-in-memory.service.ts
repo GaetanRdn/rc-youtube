@@ -9,16 +9,16 @@ export type Coaching = {
 const COACHINGS = [
   {
     id: 1,
-    name: 'Code Review'
+    name: 'Aide au dév',
   },
   {
     id: 2,
-    name: 'Prépa entretien'
-  }
+    name: 'Prépa entretien',
+  },
 ] as const satisfies Coaching[];
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CoachingInMemoryService {
   get(id: number): Observable<Coaching> {

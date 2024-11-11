@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, input, numberAttribute, Signal } from '@angular/core';
-import { Coaching, CoachingInMemoryService } from './infra/coaching-in-memory.service';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
+import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular/core';
+import { Coaching } from './infra/coaching-in-memory.service';
 
 @Component({
   selector: 'rc-coaching-detail',
@@ -10,11 +8,5 @@ import { switchMap } from 'rxjs';
   template: ` <h2 class="text-xl">{{ coaching()?.name }}</h2> `,
 })
 export class CoachingDetailComponent {
-  id = input.required({ transform: numberAttribute });
-
-  private readonly coachingRepository: CoachingInMemoryService = inject(CoachingInMemoryService);
-
-  protected readonly coaching: Signal<Coaching | undefined> = toSignal(
-    toObservable(this.id).pipe(switchMap((id: number) => this.coachingRepository.get(id)))
-  );
+  protected readonly coaching: InputSignal<Coaching> = input.required();
 }
