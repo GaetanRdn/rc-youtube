@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -26,7 +26,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
         />
       </fieldset>
       <fieldset>
-        <label for="name">Gaetan*</label>
+        <label for="name">Prénom*</label>
         <input
           type="text"
           name="firstName"
@@ -55,6 +55,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   imports: [ReactiveFormsModule],
 })
 export default class ContactComponent {
+  readonly formSent: WritableSignal<boolean> = signal(false);
+
   readonly contactForm: FormGroup = new FormGroup({
     lastName: new FormControl('', Validators.required),
     firstName: new FormControl('', Validators.required),
@@ -64,5 +66,6 @@ export default class ContactComponent {
 
   sendContact() {
     console.log('send contact');
+    this.formSent.set(true);
   }
 }

@@ -2,6 +2,7 @@ import { Route } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { inject } from '@angular/core';
 import { UserRepository } from './infra/user.repository';
+import ContactComponent from './contact.component';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,14 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./eak-abonne.component'),
   },
   { path: 'eak', title: 'souscription eak', loadComponent: () => import('./eak-non-abonne.component') },
-  { path: 'contact', loadComponent: () => import('./contact.component') },
+  {
+    path: 'contact',
+    loadComponent: () => import('./contact.component'),
+    canDeactivate: [
+      (contactComponent: ContactComponent) => {
+        return contactComponent.contactForm.untouched || contactComponent.formSent();
+      },
+    ],
+  },
   { path: '**', loadComponent: () => import('./page-not-found.component') },
 ];
