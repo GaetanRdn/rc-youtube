@@ -3,9 +3,10 @@ import { HomeComponent } from './home.component';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, title: 'Accueil' },
   {
     path: 'coaching',
+    title: 'Coaching 1:1',
     loadComponent: () => import('./coaching.component'),
     loadChildren: () => import('./coaching.routes'),
   },

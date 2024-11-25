@@ -10,6 +10,7 @@ export default [
   {
     path: 'one-hour',
     component: CoachingOneHourComponent,
+    title: 'Coaching 1:1 1h',
     children: [
       {
         path: ':id',
