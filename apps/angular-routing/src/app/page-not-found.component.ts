@@ -9,4 +9,4 @@ import { RouterLink } from '@angular/router';
     <a class="inline-flex" routerLink="/home">Retour Accueil</a> `,
   imports: [RouterLink],
 })
-export class PageNotFoundComponent {}
+export default class PageNotFoundComponent {}

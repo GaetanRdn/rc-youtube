@@ -9,4 +9,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   },
   template: `<h1 class="text-3xl">N'hésite pas à me contacter</h1>`,
 })
-export class ContactComponent {}
+export default class ContactComponent {}

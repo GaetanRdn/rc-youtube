@@ -12,4 +12,4 @@ import { RouterOutlet } from '@angular/router';
   template: `<h1 class="text-3xl">Mes coachings</h1>
     <router-outlet /> `,
 })
-export class CoachingComponent {}
+export default class CoachingComponent {}
