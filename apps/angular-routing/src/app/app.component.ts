@@ -16,6 +16,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <a class="py-2 px-4" routerLink="/coaching/one-hour">Coaching 1h</a>
         <a class="py-2 px-4" routerLink="/coaching/one-month">Coaching 1 mois</a>
         <a class="py-2 px-4" routerLink="/contact">Contact</a>
+        <a class="py-2 px-4" routerLink="/eak">EasyAngularKit</a>
       </nav>
     </header>
 

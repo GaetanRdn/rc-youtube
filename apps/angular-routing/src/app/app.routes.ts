@@ -9,6 +9,7 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./coaching.component'),
     loadChildren: () => import('./coaching.routes'),
   },
+  { path: 'eak', loadComponent: () => import('./eak.component') },
   { path: 'contact', loadComponent: () => import('./contact.component') },
   { path: '**', loadComponent: () => import('./page-not-found.component') },
 ];
