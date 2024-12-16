@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'rc-with-old-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<p>with-input title : {{ titleWithOldWay }}</p>`,
+  template: `
+    <p>with-input title : {{ titleWithOldWay }}</p>
+    <p>with-input disabled : {{ disabled }}</p>
+  `,
 })
 export class WithOldInputComponent {
-  @Input() titleWithOldWay: string | undefined;
+  @Input({ required: true, alias: 'title' }) titleWithOldWay!: string;
+
+  @Input({ transform: booleanAttribute }) disabled = false;
 }
