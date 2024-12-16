@@ -5,13 +5,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { interval, map, Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'rc-coaching-one-hour',
-  standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'flex flex-col h-auto w-full',
-  },
-  template: `<h1 class="text-2xl">Tu cherches un accompagnement d'1 heure ?</h1>
+    selector: 'rc-coaching-one-hour',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        class: 'flex flex-col h-auto w-full',
+    },
+    template: `<h1 class="text-2xl">Tu cherches un accompagnement d'1 heure ?</h1>
 
     @if (!isRouterOutletActivated()) { @let coaching = existingCoachings()[random()] ;
     <button
@@ -22,7 +21,7 @@ import { interval, map, Subject, takeUntil } from 'rxjs';
     </button>
     }
     <router-outlet (activate)="isRouterOutletActivated.set(true)" />`,
-  imports: [RouterOutlet],
+    imports: [RouterOutlet]
 })
 export class CoachingOneHourComponent {
   protected readonly isRouterOutletActivated: WritableSignal<boolean> = signal(false);

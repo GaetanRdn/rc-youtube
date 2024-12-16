@@ -23,10 +23,9 @@ interface SuscriptionForm {
 }
 
 @Component({
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  selector: 'rc-root',
-  styles: `
+    imports: [ReactiveFormsModule],
+    selector: 'rc-root',
+    styles: `
       :host {
           display: block;
           width: 500px;
@@ -52,8 +51,8 @@ interface SuscriptionForm {
           }
       }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<h1>Welcome angular-reactive-forms</h1>
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `<h1>Welcome angular-reactive-forms</h1>
     <form [formGroup]="form" (ngSubmit)="submit()">
       <div>
         <label>Nom</label>
@@ -77,7 +76,7 @@ interface SuscriptionForm {
       </div>
 
       <button type="submit" [disabled]="form.invalid">Je m'inscris</button>
-    </form>`,
+    </form>`
 })
 export class AppComponent implements OnInit {
   protected readonly form: FormGroup<SuscriptionForm> =

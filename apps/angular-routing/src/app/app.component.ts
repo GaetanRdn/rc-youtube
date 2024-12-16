@@ -2,10 +2,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  standalone: true,
-  selector: 'rc-root',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'rc-root',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="flex gap-4 items-center cursor-pointer border-2">
       <a class="w-10 h-10 inline-flex" routerLink="/home">
         <span class="bg-header-logo bg-cover bg-center w-10 h-10"></span>
@@ -23,6 +22,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       <router-outlet />
     </main>
   `,
-  imports: [RouterOutlet, RouterLink],
+    imports: [RouterOutlet, RouterLink]
 })
 export class AppComponent {}

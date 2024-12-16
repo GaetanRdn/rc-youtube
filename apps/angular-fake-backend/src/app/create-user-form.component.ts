@@ -3,9 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserCreationForm, UserCreationPayload } from './user';
 
 @Component({
-  selector: 'rc-create-user-form',
-  standalone: true,
-  template: `
+    selector: 'rc-create-user-form',
+    template: `
     <form [formGroup]="form" (ngSubmit)="submit()">
       <div>
         <label>Nom</label>
@@ -25,7 +24,7 @@ import { UserCreationForm, UserCreationPayload } from './user';
       <button type="submit" [disabled]="form.invalid">Je m'inscris</button>
     </form>
   `,
-  styles: `:host {
+    styles: `:host {
       width: 100%;
 
       form {
@@ -48,8 +47,8 @@ import { UserCreationForm, UserCreationPayload } from './user';
           }
       }
   }`,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ReactiveFormsModule]
 })
 export class CreateUserFormComponent {
   readonly userCreated: OutputEmitterRef<UserCreationPayload> = output<UserCreationPayload>();

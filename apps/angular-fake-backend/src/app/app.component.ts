@@ -13,16 +13,15 @@ import {
 } from './user.repository';
 
 @Component({
-  standalone: true,
-  selector: 'rc-root',
-  template: `
+    selector: 'rc-root',
+    template: `
     <h1>Comment se passer d'un backend ✌🏼</h1>
 
     <rc-create-user-form (userCreated)="createUser($event)" />
 
     <rc-users-list [users]="users()" />
   `,
-  imports: [CreateUserFormComponent, UsersListComponent],
+    imports: [CreateUserFormComponent, UsersListComponent]
 })
 export class AppComponent {
   private readonly createUserRepository: CreateUserRepository = inject(CREATE_USER_REPOSITORY);
