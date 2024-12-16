@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { WithInputComponent } from './with-input.component';
 
 @Component({
-  imports: [RouterModule],
   selector: 'rc-root',
-  template: `<h1>Welcome angular-signals</h1>
-    <router-outlet></router-outlet>`,
-  styles: ``,
+  imports: [WithInputComponent],
+  host: {
+    class: 'flex flex-col justify-center items-center w-screen h-screen',
+  },
+  template: `<h1 class="text-2xl font-bold">Welcome in angular-signals project</h1>
+
+    <rc-with-input titleWithOldWay="Hello there ✌🏼 " /> `,
 })
 export class AppComponent {}
