@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
-import { WithOldInputComponent } from './with-old-input.component';
-import { WithNewInputComponent } from './with-new-input.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { WithOldOutputComponent } from './with-old-output.component';
 
 @Component({
   selector: 'rc-root',
-  imports: [WithOldInputComponent, WithNewInputComponent],
+  imports: [WithOldOutputComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'flex flex-col justify-center items-center w-screen h-screen',
   },
   template: `
     <h1 class="text-2xl font-bold">Welcome in angular-signals project</h1>
 
-    <rc-with-old-input title="Hello there ✌🏼 " disabled />
+    <rc-with-old-output (actionChanged)="incrementOldCounter()" />
 
-    <rc-with-new-input title="Hello there ✌🏼 " disabled />
+    <p>Old Counter : {{ oldCounter }}</p>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  protected oldCounter = 0;
+
+  incrementOldCounter(): void {
+    this.oldCounter += 1;
+  }
+}
