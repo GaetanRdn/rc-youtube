@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { WithOldOutputComponent } from './with-old-output.component';
+import { WithOutputComponent } from './with-output.component';
 
 @Component({
   selector: 'rc-root',
-  imports: [WithOldOutputComponent],
+  imports: [WithOutputComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'flex flex-col justify-center items-center w-screen h-screen',

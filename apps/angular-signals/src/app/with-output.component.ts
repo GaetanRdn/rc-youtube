@@ -12,6 +12,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
     </button>
   `,
 })
-export class WithOldOutputComponent {
+export class WithOutputComponent {
   @Output() readonly actionChanged: EventEmitter<void> = new EventEmitter<void>();
+
+  // readonly actionChanged: OutputEmitterRef<void> = output();
 }
